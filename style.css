@@ -341,11 +341,12 @@ input[type="file"]{
     }
 
     main{
-        height: 900px;
+        height: auto;
     }
 
     .form_box{
-        width: 335px
+        width: 335px;
+        margin-bottom: 120px;
     }
 
     .form_wrapper{
