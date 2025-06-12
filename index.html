@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  
+  <title>Frontend Mentor | Conference ticket generator</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  <main>
+    <img src="/assets/images/background-desktop.png" height="1100px" id="desktop_bg" alt="desktop_bg">
+    <img src="/assets/images/logo-full.svg" height="25px" alt="Coding Conf icon" id="conf_logo">
+    <img src="/assets/images/pattern-squiggly-line-top.svg" id="sq_line" alt="">
+    <img src="/assets/images/pattern-squiggly-line-bottom-desktop.svg" id="sq_lineb" alt="">
+    <!-- Form starts -->
+    
+    <img src="assets/images/pattern-lines.svg" alt="" id="lines">
+    
+    <div class="form_box">
+      <h2>Your Journey to Coding Conf 2025 Starts Here!</h2>
+    
+      <p>Secure your spot at next year's biggest coding conference.</p>
+        
+        <form action="" id="my_form" class="form_wrapper">
+  
+          <div class="input_nd_label">
+            <label for="pic_upload">Upload Avatar</label>
+            <div id="upload_box">
+              <div class="img_wrapper">
+                <img src="assets/images/icon-upload.svg" height="30px" alt="upload icon">
+              </div>
+              <input type="file" name="pic_upload" id="pic_upload" accept="image/*">
+              <p class="up_txt">Drag and drop or click to upload</p>
+              <div id="uploaded" class="uploaded">
+                <img src="" id="uploaded_pic" style="border-radius: 10px" height="60px" alt="">
+                <div class="buttons">
+                  <button id="remove_btn" class="up_btn">Remove Image</button>
+                  <button id="change_btn" class="up_btn">Change Image</button>
+                </div>
+              </div>
+            </div>
+            <div class="small_txt">
+              Upload your photo (JPG or PNG, max size: 500KB).
+            </div>
+          </div>
+        
+          <div class="input_nd_label">
+            <label for="full_name">Full Name</label>
+            <input type="text" name="full_name" id="full_name">
+          </div>
+          
+          <div class="input_nd_label">
+            <label for="email">Email Address</label>
+            <input type="email" name="email" placeholder="example@email.com" id="email">
+          </div>
+          
+          <div class="input_nd_label">
+            <label for="git_name">GitHub Username</label>
+            <input type="text" name="github_username" placeholder="@yourusername" id="git_name">
+          </div>
+          
+        
+          <button type="submit">Generate My Ticket</button>
+        </form>
+  
+      
+        <!-- Form ends -->
+    </div>
+    
+    <!-- Generated tickets starts -->
+    <div class="generated_ticket">
+      <h2>
+        Congrats, <span id="ticket_name"></span>! <br>Your ticket is ready.
+      </h2>
+    
+      <p>We've emailed your ticket to
+      <span id="ticket_email"></span> and will send updates
+      in the run up to the event.</p>
+  
+      
+      <div class="ticket">
+        <svg id="ticket_svg" xmlns="http://www.w3.org/2000/svg" width="600" height="280" fill="none" viewBox="0 0 600 280"><g filter="url(#a)"><mask id="d" fill="#fff"><path fill-rule="evenodd" d="M0 12C0 5.373 5.373 0 12 0h438.958c5.37 0 9.876 3.759 12.94 8.169C468.863 15.319 477.135 20 486.5 20s17.637-4.681 22.602-11.831c3.064-4.41 7.57-8.169 12.94-8.169H588c6.627 0 12 5.373 12 12v256c0 6.627-5.373 12-12 12h-65.958c-5.37 0-9.876-3.759-12.94-8.169C504.137 264.681 495.865 260 486.5 260s-17.637 4.681-22.602 11.831c-3.064 4.41-7.57 8.169-12.94 8.169H12c-6.627 0-12-5.373-12-12V12Z" clip-rule="evenodd"/></mask><path fill="url(#b)" fill-rule="evenodd" d="M0 12C0 5.373 5.373 0 12 0h438.958c5.37 0 9.876 3.759 12.94 8.169C468.863 15.319 477.135 20 486.5 20s17.637-4.681 22.602-11.831c3.064-4.41 7.57-8.169 12.94-8.169H588c6.627 0 12 5.373 12 12v256c0 6.627-5.373 12-12 12h-65.958c-5.37 0-9.876-3.759-12.94-8.169C504.137 264.681 495.865 260 486.5 260s-17.637 4.681-22.602 11.831c-3.064 4.41-7.57 8.169-12.94 8.169H12c-6.627 0-12-5.373-12-12V12Z" clip-rule="evenodd"/><path fill="url(#c)" d="m463.898 271.831 1.232.856-1.232-.856Zm45.204 0 1.232-.856-1.232.856Zm0-263.662 1.232.856-1.232-.856Zm-45.204 0-1.232.856 1.232-.856ZM450.958-1.5H12v3h438.958v-3Zm35.542 20c-8.853 0-16.673-4.423-21.37-11.187l-2.464 1.712C467.9 16.56 476.623 21.5 486.5 21.5v-3Zm21.37-11.187C503.173 14.077 495.353 18.5 486.5 18.5v3c9.877 0 18.6-4.94 23.834-12.475l-2.464-1.712ZM588-1.5h-65.958v3H588v-3ZM601.5 268V12h-3v256h3Zm-79.458 13.5H588v-3h-65.958v3Zm-35.542-20c8.853 0 16.673 4.423 21.37 11.187l2.464-1.712C505.1 263.439 496.377 258.5 486.5 258.5v3Zm-21.37 11.187c4.697-6.764 12.517-11.187 21.37-11.187v-3c-9.877 0-18.6 4.939-23.834 12.475l2.464 1.712ZM12 281.5h438.958v-3H12v3ZM-1.5 12v256h3V12h-3ZM12 278.5c-5.799 0-10.5-4.701-10.5-10.5h-3c0 7.456 6.044 13.5 13.5 13.5v-3Zm450.666-7.525c-2.952 4.25-7.065 7.525-11.708 7.525v3c6.097 0 10.997-4.242 14.172-8.813l-2.464-1.712Zm59.376 7.525c-4.643 0-8.756-3.275-11.708-7.525l-2.464 1.712c3.175 4.571 8.075 8.813 14.172 8.813v-3ZM588 1.5c5.799 0 10.5 4.701 10.5 10.5h3c0-7.456-6.044-13.5-13.5-13.5v3Zm-77.666 7.525c2.952-4.25 7.065-7.525 11.708-7.525v-3c-6.097 0-10.997 4.242-14.172 8.813l2.464 1.712ZM12-1.5C4.544-1.5-1.5 4.544-1.5 12h3C1.5 6.201 6.201 1.5 12 1.5v-3ZM598.5 268c0 5.799-4.701 10.5-10.5 10.5v3c7.456 0 13.5-6.044 13.5-13.5h-3ZM450.958 1.5c4.643 0 8.756 3.275 11.708 7.525l2.464-1.712c-3.175-4.571-8.075-8.813-14.172-8.813v3Z" mask="url(#d)"/></g><rect width="3" height="16" x="485" y="42" fill="#fff" opacity=".2" rx="1.5"/><rect width="3" height="16" x="485" y="72" fill="#fff" opacity=".2" rx="1.5"/><rect width="3" height="16" x="485" y="102" fill="#fff" opacity=".2" rx="1.5"/><rect width="3" height="16" x="485" y="132" fill="#fff" opacity=".2" rx="1.5"/><rect width="3" height="16" x="485" y="162" fill="#fff" opacity=".2" rx="1.5"/><rect width="3" height="16" x="485" y="192" fill="#fff" opacity=".2" rx="1.5"/><rect width="3" height="16" x="485" y="222" fill="#fff" opacity=".2" rx="1.5"/><defs><linearGradient id="b" x1="610" x2="69.328" y1="26.462" y2="306.194" gradientUnits="userSpaceOnUse"><stop stop-color="#fff" stop-opacity=".3"/><stop offset="1" stop-color="#fff" stop-opacity=".1"/></linearGradient><linearGradient id="c" x1="0" x2="599.999" y1="140" y2="139.351" gradientUnits="userSpaceOnUse"><stop stop-color="#fff"/><stop offset="1" stop-color="#F37362"/></linearGradient><filter id="a" width="680" height="360" x="-40" y="-40" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feGaussianBlur in="BackgroundImageFix" stdDeviation="20"/><feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_107_802"/><feBlend in="SourceGraphic" in2="effect1_backgroundBlur_107_802" result="shape"/></filter></defs></svg>
+        <div class="ticket_horizon_left">
+          <div class="ticket_upper">
+            <div class="ticket_icon">
+              <img id="user_pic" src="/assets/images/logo-mark.svg"  alt="">
+            </div>
+            <div class="upper_txt">
+              <div class="upper_txt_b">
+                Coding Conf
+              </div>
+              <div class="upper_txt_l">
+                Jan 31, 2025 / Austin, TX
+              </div>
+            
+            </div>
+          </div>
+          <div class="ticket_upper">
+            <div class="ticket_icon_wrapper">
+              <img id="tk_pic" src="" height="25px"  alt="">
+            </div>
+            <div class="upper_txt">
+              <div class="upper_txt_b">
+                <span class="ticket_name" id="ticket_name"></span>
+              </div>
+              <div class="upper_txt_l git_user">
+                
+              </div>
+            
+            </div>
+          </div>
+        </div>
+        <div class="ticket_horizon_right">
+          <div id="ticket_num">998882</div>
+        </div>
+      </div>
+  
+        <!-- <div class="ticket_upper">
+          <div class="ticket_img">
+            
+          </div>
+          <div class="upper_txt">
+            <div class="upper_txt_b">
+              #name
+            </div>
+            <div class="upper_txt_l">
+              @gitusername
+            </div>
+          </div>
+          
+        </div> -->
+        <!-- </div> -->
+      <!-- </div> -->
+      <!-- <div class="test_flex">
+        <div class="item1"></div>
+        <div class="item2"></div>
+        <div class="item3"></div>
+        <div class="item4"></div>
+      </div> -->
+  
+    </div>
+  
+  
+  
+    <!-- Generated tickets ends -->
+
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
+      Coded by <a href="#">EmmBeAd</a>.
+    </div>
+  </main>
+
+
+  
+
+  <script>
+    const my_form = document.getElementById('my_form');
+    const uploaded_pic = document.getElementById('uploaded_pic')
+    const change_btn = document.getElementById('change_btn')
+    const remove_btn = document.getElementById('remove_btn')
+    const form_box = document.querySelector('.form_box')
+    const ticket_window = document.querySelector('.generated_ticket')
+    
+    const pic_upload = document.getElementById('pic_upload')
+    const upload_box = document.getElementById('upload_box')
+    
+    const full_name = document.getElementById('full_name')
+    const email = document.getElementById('email')
+    const git_user = document.getElementById('git_name')
+
+    const tk_name = document.getElementById('ticket_name')
+    const tk_name2 = document.querySelector('.ticket_name')
+    const tk_email = document.getElementById('ticket_email')
+    const tk_git_user = document.querySelector('.git_user')
+
+    let tk_pic = document.getElementById('tk_pic')
+
+    
+    //*********** image upload start ************
+
+    function change_ub_display(img, container){
+      
+        if(img.getAttribute('src') !== ''){
+          console.log("Not Empty")
+          container.classList.add('active')
+        } else{
+          container.classList.remove('active')
+          console.log('Empty')
+        }  
+    }
+
+    const doClick  = () =>{
+      pic_upload.click()
+    }
+    
+    // upload_box.addEventListener('click', doClick)
+
+    let clickCount = 1;
+
+    function upload_box_isClicked(upload_box, clickCount, doClick){
+      return function() {
+        if(clickCount === 1){
+          upload_box.addEventListener('click', doClick)
+          clickCount = 0;
+        }
+        else{
+          clickCount = 1;
+        }
+
+      }
+    }
+
+    upload_box.addEventListener('click', upload_box_isClicked(upload_box, clickCount, doClick))
+    
+    upload_box.addEventListener('dragover', (e) =>{
+      e.preventDefault();
+      upload_box.classList.add('dragover')
+    })
+    
+    upload_box.addEventListener('dragleave', (e) =>{
+      e.preventDefault();
+      upload_box.classList.remove('dragover')
+    })
+
+    upload_box.addEventListener('drop', (e) =>{
+      e.preventDefault();
+      const file = e.dataTransfer.files[0]
+      const reader = new FileReader();
+      reader.onload = () => {
+        uploaded_pic.src = reader.result
+        tk_pic.src = uploaded_pic.src
+      }
+      reader.readAsDataURL(file);
+      
+      // upload_box.style.display = 'none';
+      // document.getElementById('uploaded').style.display = 'flex'
+    })
+
+    pic_upload.addEventListener('change', (e) => {
+      const file = e.target.files[0];
+      const reader = new FileReader();
+      reader.onload = () => {
+        uploaded_pic.src = reader.result
+        tk_pic.src = uploaded_pic.src
+        change_ub_display(uploaded_pic, upload_box)
+      }
+      upload_box.removeEventListener('click', doClick)
+      reader.readAsDataURL(file);
+      
+    })
+    
+    remove_btn.addEventListener('click', (e) =>{
+      e.preventDefault();
+      uploaded_pic.src = '';
+      change_ub_display(uploaded_pic, upload_box)
+      // upload_box.addEventListener('click', doClick)
+      upload_box.addEventListener('click', upload_box_isClicked(upload_box, clickCount, doClick))
+      // if(clickedOnce = 1){
+      //   upload_box.addEventListener('click', doClick)
+      //   // clickedOnce = false;
+      // } else{
+      //   clickedOnce = 1;
+      // }
+
+    })
+
+    change_btn.addEventListener('click', (e)=>{
+      e.preventDefault();
+      pic_upload.click();
+    })
+    
+
+    //**** image upload end ********
+    
+    my_form.addEventListener('submit', (e) =>{
+      e.preventDefault()
+
+      tk_name.innerText = full_name.value
+      tk_name2.innerText = full_name.value
+      tk_email.innerText = email.value
+      tk_git_user.innerText = git_user.value
+
+      form_box.style.display = 'none'
+      ticket_window.style.display = 'flex'
+    })
+
+
+  </script>
+</body>
+</html>
