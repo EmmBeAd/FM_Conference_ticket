@@ -50,10 +50,15 @@ label{
 
 button{
     padding: 10px;
-    background: var(--Orange_500);
+    background: var(--Orange_700);
     border: transparent;
     border-radius: 10px;
     color: var(--Neutral_900)
+}
+
+button:hover{
+    background: var(--Orange_500);
+    cursor: pointer;
 }
 
 #lines{
@@ -216,12 +221,24 @@ input[type="file"]{
     gap:10px;
 }
 
+#error_email{
+    display: none;
+    align-items: center;
+    gap: 0.2rem;
+    font-size: 70%;
+    color: var(--Orange_500)
+}
+
+#error_email.active{
+    display: flex;
+}
+
 .generated_ticket{
     display: none;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    width: 600px
+    width: 600px;
 }
 
 .generated_ticket p{
@@ -229,7 +246,8 @@ input[type="file"]{
 }
 
 #ticket_svg{
-    height: 300px;
+    /* height: 300px; */
+    width: 105%;
     position:absolute;
     left: -10px
 }
@@ -238,7 +256,7 @@ input[type="file"]{
     display: flex;
     padding: 5px;
     position: relative;    
-    
+    width: inherit;
 }
 
 #ticket_name{
@@ -257,7 +275,7 @@ input[type="file"]{
     justify-content: space-between;
     width: 500px;
     height: 300px;
-    padding: 20px;
+    padding-bottom: 40px;
     flex-grow: 2;
 }
 
@@ -332,6 +350,11 @@ input[type="file"]{
         height: 150px
     }
 
+    #conf_logo{
+        margin-top: 30px;
+        margin-bottom: 25px;
+    }
+
     h2{
         font-size: 30px;
     }
@@ -341,6 +364,7 @@ input[type="file"]{
     }
 
     main{
+        min-height: 800px;
         height: auto;
     }
 
@@ -351,6 +375,48 @@ input[type="file"]{
 
     .form_wrapper{
         width: 300px;
+    }
+
+    .generated_ticket{
+        width: 330px;
+    }
+
+    .generated_ticket p{
+        font-size: 17px;
+    }
+
+    .ticket{
+        height: 172px;
+    }
+
+    #ticket_svg{
+        top: 10px;
+    }
+
+    .ticket_horizon_left{
+        height: auto;
+    }
+
+    .ticket_icon img{
+        height: 30px;
+    }
+
+    .upper_txt_b{
+        font-size: 20px;
+    }
+
+    .upper_txt_l{
+        font-size: smaller;
+    }
+
+    .ticket_horizon_right{
+        height:170px;
+    }
+
+    .ticket_icon_wrapper{
+        border-radius: 10px;
+        width: 70px;
+        height: 70px;
     }
 
     label{
