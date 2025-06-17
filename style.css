@@ -221,12 +221,23 @@ input[type="file"]{
     gap:10px;
 }
 
+.small_txt.active{
+    color: var(--Orange_500);
+}
+
+@keyframes error{
+    20%{transform: translateX(5px)}
+    50%{transform: translateX(-15px)}
+    100%{transform: translateX(5px)}
+}
+
 #error_email{
     display: none;
     align-items: center;
     gap: 0.2rem;
     font-size: 70%;
-    color: var(--Orange_500)
+    color: var(--Orange_500);
+    animation: error .5s;
 }
 
 #error_email.active{
@@ -329,6 +340,8 @@ input[type="file"]{
 .upper_txt_l{
     font-size: larger;
     font-weight: 200;
+    display: flex;
+    align-items: anchor-center;
 }
 
 #tk_pic{

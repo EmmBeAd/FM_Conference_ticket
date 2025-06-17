@@ -60,7 +60,7 @@
           
           <div class="input_nd_label">
             <label for="email">Email Address</label>
-            <input type="email" name="email" placeholder="example@email.com" id="email">
+            <input type="text" name="email" placeholder="example@email.com" id="email">
             <div id="error_email">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16"><path stroke="hsl(7, 71%, 60%)" stroke-linecap="round" stroke-linejoin="round" d="M2 8a6 6 0 1 0 12 0A6 6 0 0 0 2 8Z"/><path fill="hsl(7, 71%, 60%)" d="M8.004 10.462V7.596ZM8 5.57v-.042Z"/><path stroke="hsl(7, 71%, 60%)" stroke-linecap="round" stroke-linejoin="round" d="M8.004 10.462V7.596M8 5.569v-.042"/></svg>
               Please enter a valid email address
@@ -114,8 +114,8 @@
               <div class="upper_txt_b">
                 <span class="ticket_name" id="ticket_name"></span>
               </div>
-              <div class="upper_txt_l git_user">
-                
+              <div class="upper_txt_l">
+                <span><img src="/assets/images/icon-github.svg" alt=""></span><span class="git_user"></span>
               </div>
             
             </div>
@@ -185,6 +185,7 @@
     const tk_git_user = document.querySelector('.git_user')
 
     let tk_pic = document.getElementById('tk_pic')
+    let small_txt = document.querySelector('.small_txt')
 
     let error_email = document.getElementById('error_email')
 
@@ -253,10 +254,14 @@
       const file = e.target.files[0];
 
       if(file.size > (1024 * 1024) / 2){
+        small_txt.classList.add('active')
         small_txt.innerText ='File too large. Please upload a photo under 500KB.'
       } else if( !file.type.startsWith('image/')){
+        small_txt.classList.add('active')
         small_txt.innerText = 'Invalid file type. Please upload an image.'
       } else{
+        small_txt.classList.remove('active')
+        small_txt.innerText ='Upload your photo (JPG or PNG, max size: 500KB).'
         const reader = new FileReader();
         reader.onload = () => {
           uploaded_pic.src = reader.result
@@ -293,13 +298,14 @@
     //**** image upload end ********
 
     function emailIsValid(email) {
-        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        return emailRegex.test(email);
     }
     
     my_form.addEventListener('submit', (e) =>{
       e.preventDefault()
 
-      if(!emailIsValid(email)){
+      if(!emailIsValid(email.value)){
         error_email.classList.add('active')
         return;
       }
